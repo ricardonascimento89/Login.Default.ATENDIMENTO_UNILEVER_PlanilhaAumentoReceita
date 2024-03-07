@@ -1,0 +1,12 @@
+﻿<p>Prezados,</p>
+
+<p>Ocorreu um erro fatal no processo <b>{0}</b> e o mesmo foi interrompido.</p>
+
+<p>Detalhes sobre a exceção:</p>
+<ul>
+<li>Descrição da exceção:{1}</li>
+<li>Atividade da exceção:{2}</li>
+<li>Tipo da exceção:{3}</li>
+</ul>
+{4}
+<p>Atenciosamente.</p>

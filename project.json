@@ -1,0 +1,119 @@
+{
+  "name": "ATENDIMENTO_UNILEVER_PlanilhaAumentoReceita",
+  "description": "Template for an iteractive process, in which a Queue Item is created when a transaction is started.",
+  "main": "Main.xaml",
+  "dependencies": {
+    "Smarthis.CommonToolsActivities.CustomActivities": "[2.0.6]",
+    "Smarthis.Office365.CustomActivities.Library.Runtime": "[2.0.3]",
+    "UiPath.Excel.Activities": "[2.20.2]",
+    "UiPath.Mail.Activities": "[1.20.2]",
+    "UiPath.MicrosoftOffice365.Activities": "[2.5.7]",
+    "UiPath.System.Activities": "[23.4.3]",
+    "UiPath.UIAutomation.Activities": "[23.4.7]",
+    "UiPath.WebAPI.Activities": "[1.16.2]"
+  },
+  "webServices": [],
+  "entitiesStores": [],
+  "schemaVersion": "4.0",
+  "studioVersion": "21.10.3.0",
+  "projectVersion": "1.0.0",
+  "runtimeOptions": {
+    "autoDispose": false,
+    "netFrameworkLazyLoading": false,
+    "isPausable": true,
+    "isAttended": false,
+    "requiresUserInteraction": true,
+    "supportsPersistence": false,
+    "workflowSerialization": "DataContract",
+    "excludedLoggedData": [
+      "Private:*",
+      "*password*"
+    ],
+    "executionType": "Workflow",
+    "readyForPiP": false,
+    "startsInPiP": false,
+    "mustRestoreAllDependencies": true,
+    "pipType": "ChildSession"
+  },
+  "designOptions": {
+    "projectProfile": "Developement",
+    "outputType": "Process",
+    "libraryOptions": {
+      "includeOriginalXaml": false,
+      "privateWorkflows": []
+    },
+    "processOptions": {
+      "ignoredFiles": []
+    },
+    "fileInfoCollection": [
+      {
+        "templateType": "Generic",
+        "fileName": ".templates\\CalculateWorkingDay.xaml"
+      },
+      {
+        "templateType": "Generic",
+        "fileName": ".templates\\GenerateExecutionLogsTextFile.xaml"
+      },
+      {
+        "templateType": "Generic",
+        "fileName": ".templates\\LoginSap740Desktop.xaml"
+      },
+      {
+        "templateType": "Generic",
+        "fileName": ".templates\\SendReportMailMicrosoftOffice365.xaml"
+      },
+      {
+        "templateType": "Generic",
+        "fileName": ".templates\\SendReportMailSmtp.xaml"
+      },
+      {
+        "templateType": "Generic",
+        "fileName": ".templates\\SendReportTicketSam.xaml"
+      },
+      {
+        "templateType": "Generic",
+        "fileName": ".templates\\CloseOrKillAppGeneric.xaml"
+      },
+      {
+        "templateType": "Generic",
+        "fileName": ".templates\\InitializeAppGeneric.xaml"
+      },
+      {
+        "templateType": "Generic",
+        "fileName": ".templates\\SendMailSmtpAlertBasedOnTxt.xaml"
+      },
+      {
+        "templateType": "Generic",
+        "fileName": ".templates\\SendReportMailSmtpBasedOnTxt.xaml"
+      },
+      {
+        "templateType": "Generic",
+        "fileName": ".templates\\StopStreamingServer.xaml"
+      },
+      {
+        "templateType": "Generic",
+        "fileName": ".templates\\StartStreamingServer.xaml"
+      }
+    ],
+    "modernBehavior": true
+  },
+  "expressionLanguage": "VisualBasic",
+  "entryPoints": [
+    {
+      "filePath": "State Machine Template.xaml",
+      "uniqueId": "be50d7f0-b6d5-4480-8828-a0a19d06f47d",
+      "input": [],
+      "output": []
+    },
+    {
+      "filePath": "Main.xaml",
+      "uniqueId": "019bdf97-50ad-4f06-976b-193256090c79",
+      "input": [],
+      "output": []
+    }
+  ],
+  "isTemplate": true,
+  "templateProjectData": {},
+  "publishData": {},
+  "targetFramework": "Windows"
+}

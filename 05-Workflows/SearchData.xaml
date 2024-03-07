@@ -1,0 +1,279 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="SearchData" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.ComponentModel;assembly=System.ComponentModel.TypeConverter" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="io_browser" Type="InOutArgument(ui:UiElement)" />
+    <x:Property Name="in_transactionItem" Type="InArgument(ui:QueueItem)" />
+    <x:Property Name="out_key" Type="OutArgument(x:String)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>928,3025</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>SearchData_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="SearchData" sap:VirtualizedContainerService.HintSize="705,2920" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Edge: Unilever Up-Docs" sap:VirtualizedContainerService.HintSize="643,2809" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InUiElement="[io_browser]" InteractionMode="DebuggerApi" ScopeGuid="83ef891a-12c8-4b84-83d6-956af1d3c329" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Fill search" sap:VirtualizedContainerService.HintSize="609,2632" sap2010:WorkflowViewState.IdRef="Sequence_7">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click - Filtros" sap:VirtualizedContainerService.HintSize="547,157" sap2010:WorkflowViewState.IdRef="NClick_6" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="83ef891a-12c8-4b84-83d6-956af1d3c329" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://up-docs.blive.rio/#/doc-consultation" DesignTimeRectangle="1257, 110, 90, 39" DesignTimeScaleFactor="0.8999999761581421" ElementType="Button" FriendlyName="'Filtros'" FullSelectorArgument="&lt;webctrl aaname='Filtros' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Filtros' tag='BUTTON' type='' class='' check:innerText='Filtros' /&gt;" Guid="a8a3c4ff-6477-4a3a-8fd8-e7ad865c4fb6" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAF4AAAArCAYAAADxPT8cAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEoSURBVHhe7ZLRDcIwDESZANaCFRmDGToLaxTx4eowjlMammurs/Q+fL78POU0aigj8aSZxF/Od7EyOB/ib9eHWAmJJyHxJCSehMSTkHgSEk9C4klIPAmJJyHxJCSexKbED8NzIsuOQBfxKK+E70VvLcMcsz2xKfERpU7t3dbpLj66G1HPZ7h78O7f217LEevUeks4tHh/y97bPeu8wV4LuxPvc8wwj+5RnmW2l7IWuouPiHpZhjlmmGe3Wm571P0Xh/7xpVstt92Db1qR+Bk54jtLkfgg/+XtUnYlPsvt5ncP3j2/dFrZvPi5ud38HoGdUndOp4Uu4sU3Ek9C4klIPAmJJyHxJCSehMSTkHgSEk9C4klIPAmJJ5GKF+uCM4nX9B2Jp8w4vgBI9jdW1ORMDAAAAABJRU5ErkJggg==" InformativeScreenshot="5d3f3582fc57d6ab6fc151f47b9082e8.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Unilever Up-Docs' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V2" Visibility="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DelayAfter="0.5" DelayBefore="0.5" DisplayName="Click - Limpar" sap:VirtualizedContainerService.HintSize="547,157" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="83ef891a-12c8-4b84-83d6-956af1d3c329" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://up-docs.blive.rio/#/doc-consultation" DesignTimeRectangle="1131, 680, 96, 39" DesignTimeScaleFactor="0.8999999761581421" ElementType="Button" FriendlyName="'Limpar'" FullSelectorArgument="&lt;webctrl aaname='Limpar' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Limpar' tag='BUTTON' type='' class='' check:innerText='Limpar' /&gt;" Guid="a5a844d0-4f07-488a-8de3-b9194a19efdd" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAGQAAAArCAYAAACO7C3tAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEsSURBVHhe7ZPBjcJAEASJ4IjsCPDiIACSIQ7zWqtZzewZvNi9uEYqye7p+bjk08RYDULMZhZy/vmDndB5EnL5vcLGIMQMhJiBEDMQYgZCzECIGQgxAyFmIMQMhJiBEDOshNxu95lofwQ2EbL0Qy/tfTNWQmCAP+S/91fzrKeUTtard63uqwwlRPctyu2S+6gbEfXqG+28yzBCsizLW5nma7Jot5YhhWiuWZSX97qb5TVrbt/hsEJ0l+VKtte8B/whkmtWcn2Oepr3ACGSt3pRVuc92FxIRt2LbkumuWZRXt4zotsWdU/ve3BoIXqXdTWPeiXrxSZC9uSTH+8TIMQMhJiBEDO+XshoIMQMhJiBEDMQYgZCzECIGQgxAyFmNIXAPujMQhiPQYjVTNMDiP5AcKaUy2oAAAAASUVORK5CYII=" InformativeScreenshot="02d043dea01abe8330fedbae4e995109.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Unilever Up-Docs' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V2" Visibility="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <ui:IfElseIf DisplayName="Else If -  Defines data to search" sap:VirtualizedContainerService.HintSize="547,1709" sap2010:WorkflowViewState.IdRef="IfElseIf_2">
+              <ui:IfElseIf.ConditionBlocks>
+                <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
+                  <ui:IfElseIfBlock BlockType="If" Condition="[in_transactionItem.SpecificContent(&quot;NFE&quot;).ToString &lt;&gt; &quot;&quot;]">
+                    <ui:IfElseIfBlock.Then>
+                      <Sequence DisplayName="NF-e" sap:VirtualizedContainerService.HintSize="496,450" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into - Chave NF-e" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="434,218" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="83ef891a-12c8-4b84-83d6-956af1d3c329" Text="[in_transactionItem.SpecificContent(&quot;NFE&quot;).ToString + &quot;[k(enter)]&quot;]" Version="V3">
+                          <uix:NTypeInto.Target>
+                            <uix:TargetAnchorable BrowserURL="https://up-docs.blive.rio/#/doc-consultation" DesignTimeRectangle="58, 401, 623, 31" DesignTimeScaleFactor="0.8999999761581421" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='text' aria-role='combobox' idx='2' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='text' aria-role='combobox' class='' aaname='' /&gt;" Guid="b8da7b1f-8bbc-4012-8c38-201ed237b03d" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAnMAAAAjCAYAAAD/oYzQAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAATfSURBVHhe7djBjtw2EIRhA7km7xtfk1fKKUD8ag7aQBuNQlFka7VDyfMT+KBmkeJQq/GG2S9fvv77fcUff397jN//+s/mAF7jt6//2Bxj7/oz47vyTE94b+/03eIwB+BS8QuU/0D3vOvPjO8KPtM7fbd+HOZoNBqNRqPRaHuaO6B1/DzM1b/COe7mu+Ivc3h3n/1/pLo+f115D7vf8zt/z/g3di+d9zGbG83lHRzmLhQvrHJzzjpabzRW93J0/xPp89R+fWad92TuWUbP13nu/Dl173H1kc76O+TPILk5I535H/mcnepedd86Vo2yrnqfrqFjVZ33Kp+xh9E6V62vPmtdJ39Os888u6e6/tk11Ggdl88+M5rLOzjMXai+MH150R9lNe/WbuyoP8ufQvc/qmd0nbtbfWbX16yOjWq9JzOXa1/n1jk1v4vRfnKvOV7rOsfVo8ytcZS/mttH7ev4qHaZG1cxR+fpGtp39Yyuc5Wj/bjPXMmy7+a58VpXmmd/lLk8+1fRz8jrkTq/9h2dr2Nnsuy7eStzahatjp/BYe5C9eXM6s7cWuv1KHNzjuonmT2fjjuj++/M7Vmvq7XLsl7N3PjqPK13i70kzVdrva6OHdWvtrq/2ZjLsn9E7xvVs7GaOaP7rzBa29UfyTrjo3pl7mzso3Tt0Wfp5x6NVSvrZf2RrDNe62iZncVh7kLxYtIoz7E6p1PHteY6VvOk94zqJ8l961XrmiWX1fzOcp+6X30GravM3bjLMtfxrLPvxlezOxjtZbRfV8e15qPM5aP61XJfKTOd465aqxjTuUdZ5nW89t24zs0suazmVxitW/Mc0zkr81w9G8+6ms3Nejb2UbFeqlm9aj0bq2IsjfIc0zkr81w9G691tMzO4jB3oZWX57JuPRrTLLkxVz+JPsOZZ3rys7vndZnWjhufZa7WrPbruM7LerfRXkb7PXoOt1Zmca21jmv9au6zNdO9aj/rlb5y40drRK39rI+szjtjtB/3mW58dV6tZ+Nau+xo7mydj3DrRXa0B+27NdJonrvHja/Oq/VsvNbRMjuLw9yF9CVlP+tZ1sl1TOfofbN5T1P3rs+y+lx5n95/d7rf2q9XrWtWjTK9x2U1z1rn1nmjsTuo+6p7W62Vy3V+1jo35+1Q95F70T3Vfp2nYzWrdLxyc/We2q/zdOxI3qf3X6GuV9fPepTpPTXXfp1br7O6Wp3r+ldya7rP00z7mWXtsjo/61Gm99Rc+3Xu6B7NM4uW9Vkc5m6gvtQrXL0e0KHfP76Pz7b7/fH9eT/v9jskmss7OMzdwJVf1FiLX37YLb+HfBcBnPFOv0OiubyDwxwAAMAm0VzewWEOAABgk2gu7+AwBwAAsEk0l3dwmAMAANgkmss7OMwBAABsEs3lHRzmAAAANonm8g4OcwAAAJtEc3kHhzkAAIBNorm8g8McAADAJtFc3sFhDgAAYJNoLu/gMAcAALBJNJd3/LKHOQAAgLuL5vKOX/IwBwAA8ATRXN7BYQ4AAGCTaC7v4DAHAACwSTSXd3CYAwAA2CSayzs4zAEAAGwSzeUdHOYAAAA2iebyDg5zAAAAm0RzeQeHOQAAgE2iubzj52GORqPRaDQajfb65g5oHT8OcyvczQAAANhr7TD3J4c5AACA+/n2/X9qOSjKCu2tBwAAAABJRU5ErkJggg==" InformativeScreenshot="1463faf9da958345208559dc91faae33.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Unilever Up-Docs' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V2" Visibility="Interactive">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                  <uix:Target DesignTimeRectangle="57, 382, 610, 15" ElementType="Text" FriendlyName="'Chave NF-e'" FullSelectorArgument="&lt;webctrl aaname=' Chave NF-e ' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname=' Chave NF-e ' tag='LABEL' type='' class='' check:innerText='Chave NF-e (digite o número que deseja e tecle &amp;quot;enter&amp;quot; para adicionar outro)' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAmYAAAATCAYAAAA6XMHRAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAhCSURBVHhe7Zrpkhw1EISJ4A+G9QObe+1Hwgc24FdbXI5ISKezVOoeqedSRXyhqqzU0b0zG8LsN9+8+PDUy/NXH6+Gh5f/WP3cPHt88/Td4x+HEHu5M1wj8fMErj+Ko/Y5kqOe6ah9DuXnd08PP745hNjLnuEKOeqzcNQ+R3LEMx2xxzk44rmO2GNdzM7A9y/f2YvUSGIPt/c1w1+I0T/fmWtfAjOfb+baF8Evf9qL1Eie//re733FzPxczFz7Epj1fLPWvSRmPeOsdR3rYnYmfnj53l6oRhBruz1vhZFfkJFrXQMjn3fkWhfPbx/shWoEsbbd80YY+TkZudY1MOp5R61zTYx65lHrbGFdzM7Iw6u/n549vrWXqz3EWrGm2+vW0C/Llp+3mxs47y1yyrO7uYHz3hzxnAP/9SzW+rym2+vGOOUz4+YGznuL7H12Ny9w3ltl7/O7eYHzzmBdzC6Ah1d/nfS3ZzE31nBr3zr6xdmDW/cecO9iK27dm+fx03/8nPC3Z5//lizWcGvfOO4ztBW37j3g3sUW3Jr3gnsfW3BrzsRezDhYjwkIXehoEE6PES+zFTzvUogLVvx9WFy2nj2+/nTxCnAJe/1Zi1547vUylqFfphZu/j3j3lGGm3+3/P7pOxh/HxYXteCnt/9fwiKPS1gQnvC6Ne4U99nKcPPvGfeOHG7uvePek8PNPYqvLmZZXOrFLEL1GPFiW8HzZnLkXrO4hWdYLBbjWL8TFos5fHExQ2RaTEBoznCo5nyV5uBQPUa9mLFnKwjXq8jmQUdoHyBc7yjOvf9RjHxOhOudC4TrOeDFeBTYD+OlgvMhtM8gXO9aubXnWSwuhfJixsSELLCgC9bhU80FexUN1mMccTFz4XwZLX+rFyCcrtpiDNfwbk8549a58GPcw565mIPxUrn0821lz/PsmbNYLNrsvphhAQTXyLVG9PYiUCsIl8dY/a/M6FUgsrqCvS5aHta0F5FpisYWj+YRzs8Bv/M5veVjXEBXj/PDw7hweuavvG4eNEWjp6/R8kKvPAx0HjnYx7FFUx01j4yG0zN/y8dwZDoCeuZhvcfD4XRoLV17EaxnHoT2nJfXQL5YLMYw/GKmeoRqmqufA30F4fIYe//FzEWrF8HzM9THtcsxtvQsd7XTOWdYPyXnGqPqW3tOr3KMqiusI8eoetXTuifPNK2dznmr53KMqrdQD9db86rXQr2oMbbyquf0a8kV7m3NqzrLF4vFGLouZtBiAgILIFo1cq4RqveC0Doi6lH/K9PpPfBczrnGiJxD+1q7YC88rdppqDH26i7XUE9P7TTUGJ2uwT72au2CPYiWF2M2T3GR+TjXUA/Dugv2OlxAV1+Wa6inQr1cc7g+awjtAQ7W1KM65wzrnHONUXXkCNdXtIcao+qtvKo5XywWY7AXswjVIo8JCCyA4DrrsRbh9KxWEJk28m/MsroF+zjnGiPyb1+8/q/WvtacZ6hHa6ehxtirt3JG9ap2GmqMQbw71BhbqAc1RoV15BgV1rOcyXSFfZwzrCOcrp+1iogenessZzLdoV7UGFt51XN6lnON0eURLQ/XGFt6livaQ41R9VbeqjEubpve3xVbf6cscr64mPFFjAO9mIDAAgitNVwfmutFaJ9BZNqIi1mgAT0+hAzPCdiLmkM9GtzH+gg3Bxqjof1YV3XULriveVYjWOP3psHzGQ2nRTg/NEXD6ZlXfyYR7M3mRaDHcLh+gHDvTj0I1SPXuXiWCg7W1MN5RHVe5BUamR4BHZ6Wr/Lg/WhAy+ayvsWDWt8ZwvkZjUyP0B5y6NxD8M+TfSPA2sB5MnQe16zPJtuvVfOcHl3p8eylZ83R+858niPZe/6vLmYt3AKXCi5ms+AXri8/av2lFZrzsVdr9nFfa/Y6HXWmOR31DHQ/7bU0vBv1oWYNuutzzqiOOtOcjjPOgPfTGvtr3aNxL/Nqn31OY7011+mOke/V7cs1cvgA96uade5xXzXW3byWPhveM0LPoOfSGhrX0Kp5LR29rM7mzKA6R3aunjxDPa7WNas50DKv07g+hdbaujdqaNp3HtUzzfVcjho4zemoHetithN90S6PyPrq49C+m7Ml7/FWvZH0nAe5ahE9vq39LO/xokZobyTZ2u5sTtOc60zvyVv9Vs/ljgin7wF76Z69Z3O9lkdrN0fzVs/lR4D93M/CnUvP53TNWz2XtzTQ6o2mOgf3e3MATentIVe/00/JTyVby+2XnWFr7nrVvKqvedVj1sVsJ/FSQaajp54en8urPnKm8iKveiOJtUGmo6eeHp/Lqz5ypvIir3ojydZ2+2dn0jWcX+tqfqvPeubL5syg5wyts7lej4cJrfJAz3zZnFlgP5xJz6I699XHNfdZz3xuTrZOoHMBe0aBdd0+3OMROYCmngx43BqsQee++rjuzVkbQbZetfcpedbTkfvO38pRM9xj1sVsJ/xSs9xpyHt9nFd9zZ3W8lbrjKL3PKoh7/VxXvU1d1rLW60zimxft7/TNOc603vyVh9UPuSzwXkA61We9TKP6llPc1D5kB+B7ledJfNn8yIHlQ95plX+WfSeI/JWz+UZ6qnmZ/5sXpWzNgJdz+3T0vbkWS/GzOf8rdzVGetithN9+aiRZ5rOYV1r9vJY5Uyv19Wz4PV5P+SZpnNY15q9PFY50+t19UzcXplW5VxnepWj5pH1Lb7ZuL3cedinmtbQkHOdebl/qu9IeH8+g9O5zx7uQUO9xadkntacGfA5eG/Ne3rIWXNkPqdznz3cg8Y91VlDPopsH6f15ACaelBv8XGPPZoDraF9zcenfwFwvoAPF2sIYwAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NTypeInto.Target>
+                        </uix:NTypeInto>
+                        <Assign DisplayName="Assign - DT ou OC" sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_3">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[out_key]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">[in_transactionItem.SpecificContent("NFE").ToString]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                      </Sequence>
+                    </ui:IfElseIfBlock.Then>
+                  </ui:IfElseIfBlock>
+                  <ui:IfElseIfBlock BlockType="ElseIf" Condition="[in_transactionItem.SpecificContent(&quot;DT&quot;).ToString &lt;&gt; &quot;&quot; Or in_transactionItem.SpecificContent(&quot;OC&quot;).ToString &lt;&gt; &quot;&quot;]">
+                    <ui:IfElseIfBlock.Then>
+                      <Sequence DisplayName="DT ou OC" sap:VirtualizedContainerService.HintSize="496,452" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into - DT ou OC" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="434,218" sap2010:WorkflowViewState.IdRef="NTypeInto_2" ScopeIdentifier="83ef891a-12c8-4b84-83d6-956af1d3c329" Text="[If(in_transactionItem.SpecificContent(&quot;DT&quot;).ToString &lt;&gt; &quot;&quot;,&#xA;&#x9;&#x9;in_transactionItem.SpecificContent(&quot;DT&quot;).ToString + &quot;[k(enter)]&quot;,&#xA;&#x9;&#x9;&#x9;in_transactionItem.SpecificContent(&quot;OC&quot;).ToString + &quot;[k(enter)]&quot;&#xA;&#x9;&#x9;&#x9;)]" Version="V3">
+                          <uix:NTypeInto.Target>
+                            <uix:TargetAnchorable BrowserURL="https://up-docs.blive.rio/#/doc-consultation" DesignTimeRectangle="58, 256, 623, 31" DesignTimeScaleFactor="0.8999999761581421" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl tag='DIV' innertext=' Número da DT ou Ocorrência  (digite o número que deseja e tecle &amp;quot;enter&amp;quot; para adicionar outro) ' /&gt;&lt;webctrl tag='INPUT' aria-role='combobox' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='DIV' innertext=' Número da DT ou Ocorrência  (digite o número que deseja e tecle &amp;quot;enter&amp;quot; para adicionar outro) ' /&gt;&lt;webctrl tag='INPUT' aria-role='combobox' type='text' class='' aaname='' /&gt;" Guid="97874dfc-fcbc-4257-994d-217008628d25" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAnMAAAAjCAYAAAD/oYzQAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAATqSURBVHhe7drRihtHEIVhQ64CyQMnN4HklXJliF/NoQ1lisOp7i5Jo9FIf8GHp09Vz66kETSLv3z58+v3Hb//8+0yfvv7P5sDAAC8mx+HOYqiKIqiKOqc+vWvr3f5eZjLf4Vz3EnwVfGXOQAAcAWjXN7BYQ4AAOAko1zewWEOAADgJKNc3sFhDgAA4CSjXN7BYQ4AAOAko1zewWEOAADgJKNc3sFhDgAA4CSjXN7BYQ4AAOAko1zewWEOAADgJKNc3sFhDgAA4CSjXN7BYQ4AAOAko1zewWEOAADgJKNc3sFhDgAA4CSjXN7BYQ4AAOAko1zewWEOAADgJKNc3sFhrvDLH/9OuT2fhvfiNrPnaJbrWuV+Nuvn/Y7b82le8b3In5H73bSvdB6fyz0fWZ7RvUe59+fF/uo+2lc6f7RRLu/gMFdwH3Dm9lzJI17Hu7wXzxTvmXJ93adrJ8/o7KxXcXuu5BGv4xXfi/idnFV/0Pvhc7nnI4sZ3Xek/LNvEfudVX/Q+x1tlMs7OMxtcB9wXut1NR+Z6+dcezlz/VD1chYzSuddnvvxr5uZ5dV1teeduNeoWazdnK53slmu3Fxe63U1H5nr51x7OXP9UPVyFjNK512e+/Gvm5nl1XW1p8vdp7p3lQNq9xnKa+1ls56zuufu/dxctbfKn2mUyzs4zG1wH3ZkuadZ5FVvmPXv2Tus+tlsdnWfW/vVnph/NzuvL78PeVb3ab/KZrlyc5HlnmaRV71h1r9n77DqZ7PZ1X1u7Vd7Yv4W1T1cXs0CqnpWNI+12u0rNzvs9lXVd3k1+0yjXN7BYW7D7gMwW+u8W8e1rnV21V+tqyzyaq177l1HNlu/E/f6VZ7R62our3Uu9zRXbq7KqrXOu3Vc61pnV/3Vusoir9a65951ZLN1l/sZVV7NAqp6VjR3c7O+m89W86u1qvour2afaZTLOzjMbeg+ANHL/d11Vs1qNuu5dZVl0c8zOn9LX2e0V/Xfwc7ryzN67eZU7utsrCtubrY3erm/u86qWc1mPbeusiz6eUbnb+nrjPaq/q7qHi6vZgFVPSuau7mczXrOan7VV1Xf5dXsM41yeQeHuQ27D4Bmej1ba76a1b72tL+aqfLqOtbd/s5M7r8T9/ojz9dunTM3N8urWbW7VzO9nq01X81qX3vaX81UeXUd625/Zyb3u3Z+xioH1O4z5Oa0rz3NstX8qq9cv9pT5c80yuUdHOY2uA+7yqr+bK29yPL1I9ea6aybOWId2az/TuL1zV6zrjuZ683mlJutsqo/W2svsnz9yLVmOutmjlhHNut36T1i7e5b5YDafYbuXavV/Gqtqnm3p8qfaZTLOzjMbXAf9ixTbr5aZzu9asb1cpbz3MtZVu3JPe1XPZepPPNOVq/1nkx7mZtTbnaWKTdfrbOdXjXjejnLee7lLKv25J72q57LVJ7pcPcaZrOuB2TVs6J5rLM872a0r3RW9+S+9pTOhtms6z3LKJd3cJi7gFd42ICj8ZwD18B39bFGubyDw9wF8MXBJ+A5B66B7+pjjXJ5B4e5C+CLg0/Acw5cA9/Vxxrl8g4OcwAAACcZ5fIODnMAAAAnGeXyDg5zAAAAJxnl8o6fhzmKoiiKoijq+eUOaB0/DnM73OZXxV/mXgP/QRYAgONxmMNhOMwBAHC0b9//B155C44y8hazAAAAAElFTkSuQmCC" InformativeScreenshot="99248dd73c8b08d17b5009e3b0b47fa0.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Unilever Up-Docs' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V2" Visibility="Interactive">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                  <uix:Target DesignTimeRectangle="248, 239, 316, 13" ElementType="Text" FriendlyName="'(digite o'" FullSelectorArgument="&lt;webctrl class='label-info' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl class='label-info' tag='SPAN' type='' aaname=' (digite o número que deseja e tecle &amp;quot;enter&amp;quot; para adicionar outro) ' check:innerText='(digite o número que deseja e tecle &amp;quot;enter&amp;quot; para adicionar outro)' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAUAAAAARCAYAAACsNXVMAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAK4SURBVHhe7ZcBahxRDEN7gZ6698rVUj7lUUWV/Wd2Q7LTseBhWda2yRY+9MfPX2/vwzAMd2QewGEYbss8gMMw3JZ5AIdhuC3lA7iU8ivxP/wOwzB8Hv4mxAfQS54jvwNKt6/iu//+r+Izf0+Ubt8FSrcEXeZXwd/HfFX4+ZDfFZRuV8V/n38eQC8o3W2BUu7Z8Dlc4bt95mc8+1n6zEd45LN8hvmqvPrPd5ZHfh/9TPsAJnUdzfy2VGWO60zH/VLqq+inXsq7npJE7p3Up6Mkpbzq77rpc2SO68jd1XXJdx2FXKdKe6ozmefsOhVXyqt+11NUVY7Iq47mRzqqlJN1ud+WNK86yG+pq38G/sMDqAffk2d2eeXTnnL1iubPeN2Znp+9pXznmZ47muOZnu9uvh/xVeZ7ytV3t+SZnnd4R/ezfnfr8C47s/O7W8qv4h29nfW7vfLlA6hedyZe5Xffk7RLp9tTxs48mifv8s6RPWXszJS7tKdd35O0g7ous/qck1T11Lu8o2iepN1EErn3Ku/yzg7v6q5Kd82Q30ClmXc8V69orl53pud4lO6O39iZnnd+t6t/+gHEV5nu6iu843vK2JlH884rnu/2lLEzd3nCO+xMR3M809G88kqVO9pTr2iOUo4/SvUZz3WvvFLlCe+yMzu/u6W88rozk1/qOrozu7zyjt/YmZ53vtuZsP0vsMo7Lr9rx/cl7aX7UtVJe5L31Vc7OtJZ0pviStlS6pM5rpQ/2k13xE1RpfsC+b6UsiXPU49sh0oz76hf8n1JM/wOV5UvkdPpekc7LrLu/khH96TUV1xVvuQ3PLnekObaax/ADu/6PvzlCt/NFX7GKzLf6+uQ/i0+PICLVEq4Umf4wyt/PyjdhueY7/V1qP4t/nkAh2EY7sI8gMMw3JZ5AIdhuClv778B4kB7JFCWuUgAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NTypeInto.Target>
+                        </uix:NTypeInto>
+                        <Assign DisplayName="Assign - DT ou OC" sap:VirtualizedContainerService.HintSize="434,83" sap2010:WorkflowViewState.IdRef="Assign_1">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[out_key]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String" xml:space="preserve">[If(in_transactionItem.SpecificContent("DT").ToString &lt;&gt; "",
+		in_transactionItem.SpecificContent("DT").ToString,
+			in_transactionItem.SpecificContent("OC").ToString
+			)]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                      </Sequence>
+                    </ui:IfElseIfBlock.Then>
+                  </ui:IfElseIfBlock>
+                  <ui:IfElseIfBlock BlockType="Else">
+                    <ui:IfElseIfBlock.Then>
+                      <Sequence DisplayName="CT-e Log-In" sap:VirtualizedContainerService.HintSize="496,451" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into - DT ou OC" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="434,218" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="83ef891a-12c8-4b84-83d6-956af1d3c329" Text="[in_transactionItem.SpecificContent(&quot;CTE&quot;).ToString]" Version="V3">
+                          <uix:NTypeInto.Target>
+                            <uix:TargetAnchorable BrowserURL="https://up-docs.blive.rio/#/doc-consultation" DesignTimeRectangle="58, 256, 623, 31" DesignTimeScaleFactor="0.8999999761581421" ElementType="InputBox" FriendlyName="'INPUT'" FullSelectorArgument="&lt;webctrl tag='DIV' innertext=' Número da DT ou Ocorrência  (digite o número que deseja e tecle &amp;quot;enter&amp;quot; para adicionar outro) ' /&gt;&lt;webctrl tag='INPUT' aria-role='combobox' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='DIV' innertext=' Número da DT ou Ocorrência  (digite o número que deseja e tecle &amp;quot;enter&amp;quot; para adicionar outro) ' /&gt;&lt;webctrl tag='INPUT' aria-role='combobox' type='text' class='' aaname='' /&gt;" Guid="97874dfc-fcbc-4257-994d-217008628d25" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAnMAAAAjCAYAAAD/oYzQAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAATqSURBVHhe7drRihtHEIVhQ64CyQMnN4HklXJliF/NoQ1lisOp7i5Jo9FIf8GHp09Vz66kETSLv3z58+v3Hb//8+0yfvv7P5sDAAC8mx+HOYqiKIqiKOqc+vWvr3f5eZjLf4Vz3EnwVfGXOQAAcAWjXN7BYQ4AAOAko1zewWEOAADgJKNc3sFhDgAA4CSjXN7BYQ4AAOAko1zewWEOAADgJKNc3sFhDgAA4CSjXN7BYQ4AAOAko1zewWEOAADgJKNc3sFhDgAA4CSjXN7BYQ4AAOAko1zewWEOAADgJKNc3sFhDgAA4CSjXN7BYQ4AAOAko1zewWEOAADgJKNc3sFhrvDLH/9OuT2fhvfiNrPnaJbrWuV+Nuvn/Y7b82le8b3In5H73bSvdB6fyz0fWZ7RvUe59+fF/uo+2lc6f7RRLu/gMFdwH3Dm9lzJI17Hu7wXzxTvmXJ93adrJ8/o7KxXcXuu5BGv4xXfi/idnFV/0Pvhc7nnI4sZ3Xek/LNvEfudVX/Q+x1tlMs7OMxtcB9wXut1NR+Z6+dcezlz/VD1chYzSuddnvvxr5uZ5dV1teeduNeoWazdnK53slmu3Fxe63U1H5nr51x7OXP9UPVyFjNK512e+/Gvm5nl1XW1p8vdp7p3lQNq9xnKa+1ls56zuufu/dxctbfKn2mUyzs4zG1wH3ZkuadZ5FVvmPXv2Tus+tlsdnWfW/vVnph/NzuvL78PeVb3ab/KZrlyc5HlnmaRV71h1r9n77DqZ7PZ1X1u7Vd7Yv4W1T1cXs0CqnpWNI+12u0rNzvs9lXVd3k1+0yjXN7BYW7D7gMwW+u8W8e1rnV21V+tqyzyaq177l1HNlu/E/f6VZ7R62our3Uu9zRXbq7KqrXOu3Vc61pnV/3Vusoir9a65951ZLN1l/sZVV7NAqp6VjR3c7O+m89W86u1qvour2afaZTLOzjMbeg+ANHL/d11Vs1qNuu5dZVl0c8zOn9LX2e0V/Xfwc7ryzN67eZU7utsrCtubrY3erm/u86qWc1mPbeusiz6eUbnb+nrjPaq/q7qHi6vZgFVPSuau7mczXrOan7VV1Xf5dXsM41yeQeHuQ27D4Bmej1ba76a1b72tL+aqfLqOtbd/s5M7r8T9/ojz9dunTM3N8urWbW7VzO9nq01X81qX3vaX81UeXUd625/Zyb3u3Z+xioH1O4z5Oa0rz3NstX8qq9cv9pT5c80yuUdHOY2uA+7yqr+bK29yPL1I9ea6aybOWId2az/TuL1zV6zrjuZ683mlJutsqo/W2svsnz9yLVmOutmjlhHNut36T1i7e5b5YDafYbuXavV/Gqtqnm3p8qfaZTLOzjMbXAf9ixTbr5aZzu9asb1cpbz3MtZVu3JPe1XPZepPPNOVq/1nkx7mZtTbnaWKTdfrbOdXjXjejnLee7lLKv25J72q57LVJ7pcPcaZrOuB2TVs6J5rLM872a0r3RW9+S+9pTOhtms6z3LKJd3cJi7gFd42ICj8ZwD18B39bFGubyDw9wF8MXBJ+A5B66B7+pjjXJ5B4e5C+CLg0/Acw5cA9/Vxxrl8g4OcwAAACcZ5fIODnMAAAAnGeXyDg5zAAAAJxnl8o6fhzmKoiiKoijq+eUOaB0/DnM73OZXxV/mXgP/QRYAgONxmMNhOMwBAHC0b9//B155C44y8hazAAAAAElFTkSuQmCC" InformativeScreenshot="99248dd73c8b08d17b5009e3b0b47fa0.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Unilever Up-Docs' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V2" Visibility="Interactive">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                  <uix:Target DesignTimeRectangle="248, 239, 316, 13" ElementType="Text" FriendlyName="'(digite o'" FullSelectorArgument="&lt;webctrl class='label-info' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl class='label-info' tag='SPAN' type='' aaname=' (digite o número que deseja e tecle &amp;quot;enter&amp;quot; para adicionar outro) ' check:innerText='(digite o número que deseja e tecle &amp;quot;enter&amp;quot; para adicionar outro)' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAUAAAAARCAYAAACsNXVMAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAK4SURBVHhe7ZcBahxRDEN7gZ6698rVUj7lUUWV/Wd2Q7LTseBhWda2yRY+9MfPX2/vwzAMd2QewGEYbss8gMMw3JZ5AIdhuC3lA7iU8ivxP/wOwzB8Hv4mxAfQS54jvwNKt6/iu//+r+Izf0+Ubt8FSrcEXeZXwd/HfFX4+ZDfFZRuV8V/n38eQC8o3W2BUu7Z8Dlc4bt95mc8+1n6zEd45LN8hvmqvPrPd5ZHfh/9TPsAJnUdzfy2VGWO60zH/VLqq+inXsq7npJE7p3Up6Mkpbzq77rpc2SO68jd1XXJdx2FXKdKe6ozmefsOhVXyqt+11NUVY7Iq47mRzqqlJN1ud+WNK86yG+pq38G/sMDqAffk2d2eeXTnnL1iubPeN2Znp+9pXznmZ47muOZnu9uvh/xVeZ7ytV3t+SZnnd4R/ezfnfr8C47s/O7W8qv4h29nfW7vfLlA6hedyZe5Xffk7RLp9tTxs48mifv8s6RPWXszJS7tKdd35O0g7ous/qck1T11Lu8o2iepN1EErn3Ku/yzg7v6q5Kd82Q30ClmXc8V69orl53pud4lO6O39iZnnd+t6t/+gHEV5nu6iu843vK2JlH884rnu/2lLEzd3nCO+xMR3M809G88kqVO9pTr2iOUo4/SvUZz3WvvFLlCe+yMzu/u6W88rozk1/qOrozu7zyjt/YmZ53vtuZsP0vsMo7Lr9rx/cl7aX7UtVJe5L31Vc7OtJZ0pviStlS6pM5rpQ/2k13xE1RpfsC+b6UsiXPU49sh0oz76hf8n1JM/wOV5UvkdPpekc7LrLu/khH96TUV1xVvuQ3PLnekObaax/ADu/6PvzlCt/NFX7GKzLf6+uQ/i0+PICLVEq4Umf4wyt/PyjdhueY7/V1qP4t/nkAh2EY7sI8gMMw3JZ5AIdhuClv778B4kB7JFCWuUgAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, Image" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NTypeInto.Target>
+                        </uix:NTypeInto>
+                        <Assign DisplayName="Assign - out_key - CTE login" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_2">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">[out_key]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">[in_transactionItem.SpecificContent("CTE").ToString]</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                      </Sequence>
+                    </ui:IfElseIfBlock.Then>
+                  </ui:IfElseIfBlock>
+                </sc:BindingList>
+              </ui:IfElseIf.ConditionBlocks>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:IfElseIf>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click - Filtrar" sap:VirtualizedContainerService.HintSize="547,157" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="83ef891a-12c8-4b84-83d6-956af1d3c329" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://up-docs.blive.rio/#/doc-consultation" DesignTimeRectangle="1235, 680, 88, 39" DesignTimeScaleFactor="0.8999999761581421" ElementType="Button" FriendlyName="'Filtrar'" FullSelectorArgument="&lt;webctrl aaname='Filtrar' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Filtrar' tag='BUTTON' type='' class='' check:innerText='Filtrar' /&gt;" Guid="9beb5fb4-dd34-4790-b1c8-b49a5a839f24" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFwAAAArCAYAAAD1yO8hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEzSURBVGhD7ZRRDoJADEQ9gd7fy2L6URybdgXdHReclzRhp6XAi/GyCCoSTmYVfrveVQPLeREuxiDhZCScjISTkXAyEk5GwslIOBkJJyPhZCScjISTmUq4PdfLybIjg98xTDhKqyrOOVlmZNkRwHf+ufCMaubdfbOC70wR3iKbixmeY2HfiWfDs5g7sdea3QvuOZ3wqpcVglk18ym45xDCnSwzcD7292ZZ71tw38/+w52tmZFlRjVfkc3u3bEH3Hm6X3gFzmSzVd4D3Hl64djzPl47caYnuPNvhCOtLOY9wJ3TC2/l3otnBHtVxbne4M4phRtbcu/FM4I9nMFrI/Z7gjuHCRdPJJyMhJORcDISTkbCyUg4GQknI+FkJJyMhJORcDISTqYUrhpXzipccJBwKsvyAMGLAHDWBveMAAAAAElFTkSuQmCC" InformativeScreenshot="bc492b2851bd12a82cacb9d30c8fcfff.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Unilever Up-Docs' /&gt;" SearchSteps="Selector, FuzzySelector, Image" Version="V2" Visibility="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NCheckState DisplayName="Check App State - Validação da busca" EnableIfExists="False" EnableIfNotExists="False" sap:VirtualizedContainerService.HintSize="547,177" sap2010:WorkflowViewState.IdRef="NCheckState_1" ScopeIdentifier="83ef891a-12c8-4b84-83d6-956af1d3c329" Version="V3">
+              <uix:NCheckState.IfExists>
+                <ui:LogMessage sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Busca realizada com sucesso.&quot;]" />
+              </uix:NCheckState.IfExists>
+              <uix:NCheckState.IfNotExists>
+                <Throw DisplayName="Throw -  Resultado não encontrado" Exception="[new BusinessRuleException(string.Format(&quot;Resultado não encontrado para o dado: {0}&quot;, out_key))]" sap:VirtualizedContainerService.HintSize="334,90" sap2010:WorkflowViewState.IdRef="Throw_1" />
+              </uix:NCheckState.IfNotExists>
+              <uix:NCheckState.Target>
+                <uix:TargetAnchorable BrowserURL="https://up-docs.blive.rio/#/doc-consultation" DesignTimeRectangle="122, 268, 131, 30" DesignTimeScaleFactor="0.8999999761581421" ElementType="Text" FriendlyName="'Transportadora'" FullSelectorArgument="&lt;webctrl aaname='Transportadora' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Transportadora' tag='LABEL' type='' class='' check:innerText='Transportadora' /&gt;" Guid="bf7f3e65-308b-49b5-a8aa-0c61f41f45e9" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIcAAAAiCAYAAAB1NspXAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFlSURBVHhe7dVRasNgDAPgHW29/6Ey9CAmjOWkS8qftfrAEFvuQ4Npv7YII8cRVo4jrBxHWDmOsOxxPB7fY8XvO3pXH3scV3yPd3kXzqG/le4laF+f3T5nXQ6c10xnXU4u0xl3aik3J87dzjSn+uw+s9Kp49DqZpxDl6Ho2QxFXYaiLqtFz2Yo6jIUdfM64/wOTh+Hmvq63/Vq2oUp3+uhm0G3R/UzZ3vY61e69DiImeZHey2qPehsyqD20M0Uc92p+3/J6w4xc/kKl/9y6Kw+Tz1xvrdbc1X3aw/dDOrcPcO0C11+ZOcuXva3UvOprxm4XTjbg87qLukOXN3DXr7SS345amlGrteiKaMp72bQ7etMi+pMM9DcZUp3te7g0HGsdqcX9klyHGHlOML6F8cRa+Q4wspxhJXjCCvHEVaOI6wcR1g5jrByHGHlOMLKcYSV4wgrxxFWjiOsHEdYOY6wchxhbNsPfVplYG46EBsAAAAASUVORK5CYII=" InformativeScreenshot="5829aa823f0787d2aa2451c3871d93c7.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Unilever Up-Docs' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target DesignTimeRectangle="172, 128, 174, 17" ElementType="Text" FriendlyName="'Consulta de Documentos'" FullSelectorArgument="&lt;webctrl aaname='Consulta de Documentos ' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Consulta de Documentos ' tag='SPAN' type='' class='' check:innerText='Consulta de Documentos' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAALIAAAAVCAYAAADik7Q+AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHhSURBVGhD7ZJbbsJADEW7tLL/1WQFVPNh6WKOx05IKIz8caTch53Q+mfbtnvTfDt9yM0S9CE3S9CH3CxBH3KzBF97yLfbL/pX8e73NfvAQx7/NA/1/hP6piu/86zd9vdUqLcyV/zmp0Oml3ziHzz6Tu+dxVm73/3dn8gVv/fhkPe8YHQVn2WdWR51I23znig3f4afobksJ6Ke93UvzczyqE/a5jUnjzKfm4463jei3PxKfuiQaZHqLI+0eT4jr9Ihjzqe0cnmKh0i6qif7a7kmpEX7SDvrDzzZrOUqXf4kGdelpNWjs7Pdhqjk/UquysdIuqon+3O3pPNk654r+aveJQrpx6y+VFOnqK+9sirdNT3UM+g3Hu6S9EOEXXUp47uj3YY0fxMV7zxTFD3LE99094fPB2yL2hGz+RlOTFy61TmKx3yhqaeUt2jukq0W/2oQ89ENk+64lGuHNm51zNGpvnDIQ+ihep7bR49Rx5p8/RZ85muekNTT6FOZY/XRHUPeWflpCveeJ7tyeYzz/uqKVPv6ZAHVlKyjs9UzzxllvlcO16rP/NsjtCZqJ/lhJ+J5rLO3tx3vK56tsvwmeqZp2R+JcdDbppvow+5WYI+5GYJ+pCbJehDbpagD7lZgO3+ByEcehbPPj8qAAAAAElFTkSuQmCC" SearchSteps="Selector, FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NCheckState.Target>
+            </uix:NCheckState>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-8, -8, 1380, 744" BrowserType="Edge" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGoSURBVDhPrZPdKwNQGMb3F9i4oygx4ZrLiVuKKxlbUaQQMlttMmZhhc1I1GaRjxsX1KRY8rn5GJmPiJjajUut5YJ9Pc55NRQXmIunU+97nl/P+56OQJhgkTB5mfBLcY+EA/5ijsnLAd81fqz4AdnZ8+jtPYK+xw2Neo+Kanbq9W6YTB40N+8gGo2SQqEIbq4foWx3QiS0vgGyxHMwm08xNnaOmup1KjY2bKG76xC2yUvIqhxkzsyYRVrqNKQVq3h4eMII8xBAnDmLwYETdHTsQ9G2S8Wmxm0MsBpPptHsEyAleYp6XCXFy5QmN3ceghw2QmvLDrTaA7QrnHShvn4TSqWTRpDL3xJ8BoiEFvj9z5DJHBDk5y1gYvwCKqULBsMxXeC70OncaGOJ6mo3vgASRVYEAi+olK5BkJRkxejIGbSdB7DZrtDHYhuNHoo+bDqFlF36boRgMAy+P3rG8vJVMnODof+YTh5fpXKhQLJIgPT0GYKUla7A5wt8LDEWqahwCcYhD+z2e1qqnM3HezEAVzgcwd2tnxbOPe+AePQvgLg/Uxzf2SJ5BacdIyzDF3K0AAAAAElFTkSuQmCC" InformativeScreenshot="550e3bb79c0af99cbed29db4d5a164d0.jpg" Selector="&lt;html app='msedge.exe' title='Unilever Up-Docs' /&gt;" Title="Unilever Up-Docs" Url="https://up-docs.blive.rio/#/doc-consultation" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>

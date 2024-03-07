@@ -1,0 +1,234 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="GetGenerationData" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:uuam="clr-namespace:UiPath.UIAutomationNext.Activities.Models;assembly=UiPath.UIAutomationNext.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_currentElement" Type="InArgument(ui:UiElement)" />
+    <x:Property Name="io_dtSheetData" Type="InOutArgument(sd:DataTable)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>928,1642</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>GetGenerationData_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>UiPath.Shared.Activities.Business</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.MicrosoftOffice365.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Linq.Async.Queryable</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Linq.Parallel</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+      <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="GetGenerationData" sap:VirtualizedContainerService.HintSize="707,1577" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Edge: Unilever Up-Docs" sap:VirtualizedContainerService.HintSize="645,1466" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="98fea371-00f1-4d7d-be0e-b61063fa20db" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Generate NF-2" sap:VirtualizedContainerService.HintSize="611,1249" sap2010:WorkflowViewState.IdRef="Sequence_5">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click - Geração CT-e" sap:VirtualizedContainerService.HintSize="549,157" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="98fea371-00f1-4d7d-be0e-b61063fa20db" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://up-docs.blive.rio/#/doc-consultation" DesignTimeRectangle="468, 313, 15, 37" DesignTimeScaleFactor="0.8999999761581421" ElementType="Icon" FriendlyName="'IMG'" FullSelectorArgument="[string.Format(&quot;{0}{1}&quot;,in_currentElement.selector,&quot;&lt;webctrl tag='IMG' parentclass='status-img authorized step-5'/&gt;&quot;)]" FuzzySelectorArgument="&lt;webctrl tag='IMG' parentclass='status-img authorized step-5' type='' class='' aaname='' /&gt;" Guid="4201f6a2-341c-43a1-aac8-0bcac62fce29" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABMAAAApCAYAAADXsRIHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGmSURBVEhL7ZZNSwJRFIbn39SqaFt/oAha1rYf0OcyWgVS1KqVpbVoZRFJ0KYsqBC1UEchzQpGbDRnQMH8ILIQTnOu0zTTFW83LRC88HDP/TjPjDDIK4BpKOUgeB+XwJ0YB1dsGHaiQ7AR6jXANe67ExPgk22gVEJ6Z30IL+85CGRWqcafgn3Yjx7h+6Ed57C+xrlRrd+zB7/WCJERwW8hD+ghNfVmrdCV8fM3MrUiQqbk50bR+ihZRHHAbmyEG1F10DJ/esXY5MGXXjbqDpJ5pFlSs/BI02zZaXKOamyER5phy3j5P9l9/hAKrxKTu/wBW+YU+2FbHGDiDPexZbxcP60bdcuyeM5l1JTsLDkPV5k1JvgJ4f2mPxM/Rl/axuREmmLLeOkwWVTdgr34aFOOHiZh/3bMshdRnbQsWw6BXPQ2pViVtb/qgGUvq4UdStYOujJ+2ibb1CAye1ALa6ZUyANKGoc9TUrFUOPc+sB6BK1LPhHk4iVJz+ZNXrAfPUZ0r9aeQSocw3lqgRy6bjC6D1qazNH9IrVI7r/VSrpBi+763IYB8AEIQloPd84bjgAAAABJRU5ErkJggg==" InformativeScreenshot="7a4f7d89fad18fbad170f78e960644e4.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Unilever Up-Docs' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+            <uix:NForEachUiElement DisplayName="For Each UI Element" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='CurrentElement'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='Column0' attr='fulltext'&gt;&lt;webctrl tag='div' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="549,740" sap2010:WorkflowViewState.IdRef="NForEachUiElement_1" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="98fea371-00f1-4d7d-be0e-b61063fa20db" Version="V3">
+              <uix:NForEachUiElement.Body>
+                <ActivityAction x:TypeArguments="x:Int32">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Table data" sap:VirtualizedContainerService.HintSize="485,475" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                    <Sequence.Variables>
+                      <Variable x:TypeArguments="sd:DataTable" Name="dtNfe" />
+                    </Sequence.Variables>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[dtNfe]" DisplayName="Extract Table Data - dtNfe" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='NfeData'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='Column0' attr='fulltext'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="423,157" sap2010:WorkflowViewState.IdRef="NExtractData_3" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="98fea371-00f1-4d7d-be0e-b61063fa20db" Version="V3">
+                      <uix:NExtractData.Target>
+                        <uix:TargetAnchorable DesignTimeRectangle="127, 507, 1151, 69" DesignTimeScaleFactor="0.8999999761581421" FriendlyName="'Etapa1Chave de'" FullSelectorArgument="[string.Format(&quot;&lt;webctrl tag='DIV' class='group-detail ng-star-inserted' idx='{0}'/&gt;&quot;,CurrentIndex.ToString)]" Guid="011fbd8f-8295-4548-b425-6434a951ab26" InformativeScreenshot="4632eb07e38904e7b03271f079830480.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Unilever Up-Docs' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                      </uix:NExtractData.Target>
+                    </uix:NExtractData>
+                    <ui:MultipleAssign DisplayName="Multiple Assign - etapa,chave,valor" sap:VirtualizedContainerService.HintSize="423,163" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+                      <ui:MultipleAssign.AssignOperations>
+                        <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
+                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+                            <ui:AssignOperation.To>
+                              <OutArgument x:TypeArguments="x:Object">[io_dtSheetData(CurrentIndex-1)("Etapa")]</OutArgument>
+                            </ui:AssignOperation.To>
+                            <ui:AssignOperation.Value>
+                              <InArgument x:TypeArguments="x:Object">[dtNfe(0)("NfeData").tostring]</InArgument>
+                            </ui:AssignOperation.Value>
+                          </ui:AssignOperation>
+                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+                            <ui:AssignOperation.To>
+                              <OutArgument x:TypeArguments="x:Object">[io_dtSheetData(CurrentIndex-1)("Chave de Acesso")]</OutArgument>
+                            </ui:AssignOperation.To>
+                            <ui:AssignOperation.Value>
+                              <InArgument x:TypeArguments="x:Object">[dtNfe(1)("NfeData").tostring]</InArgument>
+                            </ui:AssignOperation.Value>
+                          </ui:AssignOperation>
+                          <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+                            <ui:AssignOperation.To>
+                              <OutArgument x:TypeArguments="x:Object">[io_dtSheetData(CurrentIndex-1)("Valor")]</OutArgument>
+                            </ui:AssignOperation.To>
+                            <ui:AssignOperation.Value>
+                              <InArgument x:TypeArguments="x:Object">[dtNfe(6)("NfeData").tostring]</InArgument>
+                            </ui:AssignOperation.Value>
+                          </ui:AssignOperation>
+                        </scg:List>
+                      </ui:MultipleAssign.AssignOperations>
+                    </ui:MultipleAssign>
+                  </Sequence>
+                </ActivityAction>
+              </uix:NForEachUiElement.Body>
+              <uix:NForEachUiElement.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="125, 389, 1175, 142" DesignTimeScaleFactor="0.8999999761581421" FriendlyName="'Etapa1Chave de'" FullSelectorArgument="&lt;webctrl tag='GENERATED-CTE-DOCUMENT' /&gt;" Guid="34d34587-d651-49ab-bd0b-326ef821db07" InformativeScreenshot="50afc5c70d59a128d43e6332366806c9.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Unilever Up-Docs' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+              </uix:NForEachUiElement.Target>
+              <uix:NForEachUiElement.Variables>
+                <Variable x:TypeArguments="ui:UiElement" Name="CurrentElement" />
+                <Variable x:TypeArguments="x:String" Name="CurrentElement_Label" />
+              </uix:NForEachUiElement.Variables>
+              <uix:NForEachUiElement.VariablesMetadata>
+                <scg:List x:TypeArguments="uuam:VariableMetadata" x:Key="Column0" Capacity="4">
+                  <uuam:VariableMetadata Name="CurrentElement" Type="ui:UiElement" />
+                  <uuam:VariableMetadata Name="CurrentElement_Label" Type="x:String" />
+                </scg:List>
+              </uix:NForEachUiElement.VariablesMetadata>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </uix:NForEachUiElement>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click - Geração CT-e" sap:VirtualizedContainerService.HintSize="549,157" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="98fea371-00f1-4d7d-be0e-b61063fa20db" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://up-docs.blive.rio/#/doc-consultation" DesignTimeRectangle="468, 313, 15, 37" DesignTimeScaleFactor="0.8999999761581421" ElementType="Icon" FriendlyName="'IMG'" FullSelectorArgument="[string.Format(&quot;{0}{1}&quot;,in_currentElement.selector,&quot;&lt;webctrl tag='IMG' parentclass='status-img authorized step-5'/&gt;&quot;)]" FuzzySelectorArgument="&lt;webctrl tag='IMG' parentclass='status-img authorized step-5' type='' class='' aaname='' /&gt;" Guid="4201f6a2-341c-43a1-aac8-0bcac62fce29" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABMAAAApCAYAAADXsRIHAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGmSURBVEhL7ZZNSwJRFIbn39SqaFt/oAha1rYf0OcyWgVS1KqVpbVoZRFJ0KYsqBC1UEchzQpGbDRnQMH8ILIQTnOu0zTTFW83LRC88HDP/TjPjDDIK4BpKOUgeB+XwJ0YB1dsGHaiQ7AR6jXANe67ExPgk22gVEJ6Z30IL+85CGRWqcafgn3Yjx7h+6Ed57C+xrlRrd+zB7/WCJERwW8hD+ghNfVmrdCV8fM3MrUiQqbk50bR+ihZRHHAbmyEG1F10DJ/esXY5MGXXjbqDpJ5pFlSs/BI02zZaXKOamyER5phy3j5P9l9/hAKrxKTu/wBW+YU+2FbHGDiDPexZbxcP60bdcuyeM5l1JTsLDkPV5k1JvgJ4f2mPxM/Rl/axuREmmLLeOkwWVTdgr34aFOOHiZh/3bMshdRnbQsWw6BXPQ2pViVtb/qgGUvq4UdStYOujJ+2ibb1CAye1ALa6ZUyANKGoc9TUrFUOPc+sB6BK1LPhHk4iVJz+ZNXrAfPUZ0r9aeQSocw3lqgRy6bjC6D1qazNH9IrVI7r/VSrpBi+763IYB8AEIQloPd84bjgAAAABJRU5ErkJggg==" InformativeScreenshot="7a4f7d89fad18fbad170f78e960644e4.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Unilever Up-Docs' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+              </uix:NClick.Target>
+            </uix:NClick>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-8, -8, 1380, 744" BrowserType="Edge" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGoSURBVDhPrZPdKwNQGMb3F9i4oygx4ZrLiVuKKxlbUaQQMlttMmZhhc1I1GaRjxsX1KRY8rn5GJmPiJjajUut5YJ9Pc55NRQXmIunU+97nl/P+56OQJhgkTB5mfBLcY+EA/5ijsnLAd81fqz4AdnZ8+jtPYK+xw2Neo+Kanbq9W6YTB40N+8gGo2SQqEIbq4foWx3QiS0vgGyxHMwm08xNnaOmup1KjY2bKG76xC2yUvIqhxkzsyYRVrqNKQVq3h4eMII8xBAnDmLwYETdHTsQ9G2S8Wmxm0MsBpPptHsEyAleYp6XCXFy5QmN3ceghw2QmvLDrTaA7QrnHShvn4TSqWTRpDL3xJ8BoiEFvj9z5DJHBDk5y1gYvwCKqULBsMxXeC70OncaGOJ6mo3vgASRVYEAi+olK5BkJRkxejIGbSdB7DZrtDHYhuNHoo+bDqFlF36boRgMAy+P3rG8vJVMnODof+YTh5fpXKhQLJIgPT0GYKUla7A5wt8LDEWqahwCcYhD+z2e1qqnM3HezEAVzgcwd2tnxbOPe+AePQvgLg/Uxzf2SJ5BacdIyzDF3K0AAAAAElFTkSuQmCC" InformativeScreenshot="7932c70f0926d8ae36fa205934573ce4.jpg" Selector="&lt;html app='msedge.exe' title='Unilever Up-Docs' /&gt;" Title="Unilever Up-Docs" Url="https://up-docs.blive.rio/#/doc-consultation" />
+      </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>

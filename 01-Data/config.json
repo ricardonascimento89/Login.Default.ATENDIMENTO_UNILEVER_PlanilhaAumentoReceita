@@ -1,0 +1,45 @@
+﻿{
+    "configurationInfos":{
+        "processQueueName":"ATENDIMENTO_UNILEVER_PlanilhaAumentoReceita",
+        "processQueueFolder":"Default",
+        "maxRetryNumberInitApplications":3,
+        "maxRetryNumberProcess":2,
+        "maxConsecutiveApplicationExceptions":3,
+        "useStorageBucketFiles":false,
+        "localBucketDir":"",
+		"urlSearch":"https://up-docs.blive.rio/#/doc-consultation",
+		"sheetWrite":"OutputData",
+		"sheetData":"DataInput",
+        "exScreenshotsFolderPath":"c:/temp",
+        "businessProcessName":"ATENDIMENTO_UNILEVER_PlanilhaAumentoReceita",
+       
+		"assets":{
+            "localPath":{
+                "name":"ATENDIMENTO_UNILEVER_PlanilhaAumentoReceita_FilePath",
+                "orchestratorFolder":""
+            },
+            "tenantID":{
+                "name":"Office365-AzureApp_TenantID",
+                "orchestratorFolder":""
+            },
+            "portalUrl":{
+                "name":"ATENDIMENTO_BaixaDeXML_urlPortal",
+                "orchestratorFolder":""
+            },
+            "appID":{
+                "name":"Office365-AzureApp_ApplicationID",
+                "orchestratorFolder":""
+            }
+        },
+        "credentials":{
+            "emailCredential":{
+                "name":"Credential_Servico.Robot_Mail",
+                "orchestratorFolder":""
+            },
+            "portalCredential":{
+                "name":"ATENDIMENTO_PortalUnilever",
+                "orchestratorFolder":""
+            }
+        }
+    }
+}

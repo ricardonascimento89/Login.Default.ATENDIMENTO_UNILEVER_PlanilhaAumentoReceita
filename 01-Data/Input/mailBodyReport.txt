@@ -1,0 +1,5 @@
+﻿<p>Prezados,</p>
+
+<p>Segue resultado da última execução da automação.</p>
+
+<p>Atenciosamente.</p>
